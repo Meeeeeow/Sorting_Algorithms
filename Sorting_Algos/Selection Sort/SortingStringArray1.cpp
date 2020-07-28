@@ -29,24 +29,23 @@ void selectionsortreccursion(string arr[] , int size ,int index)
 {
     if(index == size)
         return;
-    for(int i =0;i<size-1;i++)
+
+    int min_index = index;
+    for(int j=index+1;j<size;j++)
     {
-        int min_index = i;
-        for(int j=i+1;j<size;j++)
+        if(arr[min_index] > arr[j])
         {
-           if(arr[min_index] > arr[j])
-           {
-               min_index = j;
-           }
+            min_index = j;
         }
-        string key = arr[min_index];
-        while(min_index > i)
-        {
-            arr[min_index]  = arr[min_index - 1];
-            min_index--;
-        }
-        arr[i]  = key;
     }
+    string key = arr[min_index];
+    while(min_index > index)
+    {
+        arr[min_index]  = arr[min_index - 1];
+        min_index--;
+    }
+    arr[index]  = key;
+
     selectionsortreccursion(arr,size,index+1);
 }
 void printarray(string arr[],int size)

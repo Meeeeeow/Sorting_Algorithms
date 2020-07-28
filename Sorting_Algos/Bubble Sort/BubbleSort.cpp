@@ -34,9 +34,10 @@ void inputarray(int arr[],int size)
 void bubblesort(int arr[],int size)
 {
     int temp =0,counter = 0;
-    for (int i =0 ;i<size - 1;i++)
+    for (int i =1 ;i<size + 1;i++)
     {
-        for(int j =0 ;j<size-1;j++)
+
+        for(int j =0 ;j<size-i;j++)
         {
             if (arr[j] > arr[j+1])
             {
@@ -49,13 +50,13 @@ void bubblesort(int arr[],int size)
             }
 
         }
-        //cout<<"pass "<<i+1<<":\n";
-        /*for (int k =0 ;k<size;k++)
+        cout<<"pass "<<i<<":\n";
+        for (int k =0 ;k<size;k++)
     {
         cout<<arr[k]<<" ";
     }
     cout<<"\n";
-*/
+
         if(counter == 0)
                 {
                     //cout<<"the array is sorted at position "<<i+1<<"\n";
