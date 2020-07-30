@@ -38,7 +38,13 @@ void selectionsort(int arr[] , int size)
         temp = arr[min_index];
         arr[min_index] = arr[i];
         arr[i] = temp;
-    }
+        /*int key = arr[min_index];
+        while(min_index>i)
+        {
+            arr[min_index] = arr[min_index-1];
+            min_index--;
+        }
+        arr[i] = key;*/
 
 }
 void printarray(int arr[],int size)

@@ -3,7 +3,7 @@ using namespace std;
 void insertionsort(int arr[],int size);
 int main(void)
 {
-    int arr[] ={4,3,2,10,12,1,5,6};
+    int arr[] ={5,1,4,2,8};
     int n = sizeof(arr)/sizeof(arr[0]);
     insertionsort(arr,n);
     return 0;

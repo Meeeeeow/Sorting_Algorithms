@@ -33,9 +33,10 @@ void inputarray(int arr[],int size)
 //sorting
 void bubblesort(int arr[],int size)
 {
-    int temp =0,counter = 0;
+    int temp =0;
     for (int i =1 ;i<size + 1;i++)
     {
+        int counter = 0;
 
         for(int j =0 ;j<size-i;j++)
         {
@@ -62,7 +63,7 @@ void bubblesort(int arr[],int size)
                     //cout<<"the array is sorted at position "<<i+1<<"\n";
                     break;
                 }
-        counter = 0;
+
 
     }
 

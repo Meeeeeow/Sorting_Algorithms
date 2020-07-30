@@ -30,7 +30,7 @@ void selectionsortreccursion(int arr[] , int size ,int index)
     if(index == size)
         return;
     int min_index = index;
-    for(int j=index+1;j<size;j++)
+    for(int j = index+1;j<size;j++)
     {
         if(arr[min_index] > arr[j])
         {

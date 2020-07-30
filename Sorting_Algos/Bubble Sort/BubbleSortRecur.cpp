@@ -34,9 +34,9 @@ void bubblerecursion(vector<int>&v , int size)
     int temp =0;
     if(size == 1)
         return ;
-    for(int i =0;i<v.size()-1;i++)
+    for(int i =1;i<v.size()+1;i++)
     {
-      for(int j=0;j<v.size()-i-1;j++)
+      for(int j=0;j<v.size()-i;j++)
       {
           if(v[j] >v[j+1])
           {

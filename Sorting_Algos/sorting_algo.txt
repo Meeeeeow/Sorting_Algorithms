@@ -1,0 +1,182 @@
+                                                         
+														 
+														  #Bubble Sort
+														  
+														  
+
+Algorithm:
+    bubblesort(arr,size of array)  
+		for i=1;i<size+1;i++ //koto pass e ache shetar jnne
+			counter = 0
+			for j = 0;j<size-i;j++ //swap er jnne
+			  if arr[j]>arr[j+1]: 
+				 temp = arr[j];
+				 arr[j] = arr[j+1];
+				 arr[j+1] = temp;
+				 counter++;			 
+			
+			if counter == 0 break;
+		bubblesort(arr,size of array - 1)
+
+                                                   
+												   
+												       
+													     #Selcetion Sort
+														 
+														 
+													   
+													   
+													   
+Algorithm:
+    
+    SelectionSort(arr,size of array)
+        for i = 0;i<size-1;i++    //minimum ekta value guess er jnne 
+            min_index = i;
+            for j = i+1;j<size;j++ //real minimum number ber korar jnne
+                if arr[min_index] > arr[j]
+                    min_index = j;
+            swap(arr[i],arr[min_index])
+
+			
+	But it is not stable
+    
+    
+    Stable Selection Sort Algo:
+      	SelectionSort(arr,size of array)
+		    for i = 0;i<size-1;i++
+			    min_index = i;
+				for j = i+1;j<size;j++
+					if arr[min_index] > arr[j]
+						min_index = j;				
+		        key = arr[min_index];
+				while min_index > i
+				    arr[min_index] = arr[min_index-1];
+					min_index--;
+				arr[i]=key;
+	
+
+	Recursion algo:
+	
+        SelectionSort(arr,size of array,index = 0)
+		   
+			if index == size return;
+			min_index = index;
+			
+			for j = index + 1;j<size;j++
+				if arr[min_index] > arr[j]
+					min_index = j;				
+			key = arr[min_index];
+			while min_index > index
+				arr[min_index] = arr[min_index-1];
+				min_index--;
+			arr[index]=key;
+				
+				SelectionSort(arr,size of array,index+1)	
+
+
+			
+		                                                       
+															   #Insertion Sort
+															   
+															   
+															   
+															   
+Algorithm:
+        
+		InsertionSort(arr,size)
+		    for i =1;i<size;i++
+			    for j = 0;j<i;j++
+				    if arr[j] > arr[i]
+					    min_index = i;
+						key = arr[min_index];
+						while(min_index > j)
+						   arr[min_index]  = arr[min_index-1]
+						   min_index--;
+						arr[j] = key;
+                        break;
+						
+				
+    
+    Recursion algo:
+	
+        InsertionSort(arr,size of array,index = 1)
+		   
+			if index == size return;
+			
+			for j = 0;j<index;j++
+				if arr[j] > arr[index]
+					min_index = index;				
+					key = arr[min_index];
+					while min_index > j
+						arr[min_index] = arr[min_index-1];
+						min_index--;
+					arr[j]=key;
+						break;
+			InsertionSort(arr,size of array,index+1)	
+			
+			
+	
+	
+	Recursion algo(version 2):
+	
+	    InsertionSort(arr,size)
+		    if size == 1
+				return;
+			InsertionSort(arr,size-1);
+            last = arr[size-1];
+            j = arr[size-2];
+			key =arr[last]
+            while j>=0 && arr[j] > arr[last]
+                arr[j+1] = arr[j];
+                j--;
+            arr[j+1] = key;				
+				
+				
+				
+				
+				
+				                                              #Merge Sort
+
+
+
+
+Algorithm:
+        
+        void Merge(arr[],left,middle,right)
+		    n1 = m - l + 1;
+			n2 = r - m;
+			Left[n1],Right[n2]
+			Left[n1] = {l+i,....}
+			Right[n2] = {m+1+j,...}
+			//left r right 2 ta array te vaag kore nilm
+			
+			//compare left and right array
+			
+            i=0,j=0,k=l;  			
+			while i<n1 && j<n2
+			    if Left[i] < Right[j]
+                    arr[k] = Left[i];
+                  	i++;
+                else
+                    arr[k] = Right[j];
+                    j++;
+                k++;
+            
+            //j element gula array te roye jbe tadr position otai hbe
+            while i<n1
+                arr[k] = Left[i];
+                i++; k++;
+            while j < n2    
+                arr[k] = Right[j];
+                j++; k++;
+				
+			
+		void MergeSort(arr[],left,right)  (arr,0,size-1) pathabo
+		
+            if left<right
+			   middle  = left + (right -left) / 2; //overflow remove korar jnne large left r right er khetre
+			   
+			   MergeSort(arr,left,middle);
+			   MergeSort(arr,middle+1,right);
+			   Merge(arr,left,middle,right);
+		
