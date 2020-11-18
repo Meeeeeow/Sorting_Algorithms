@@ -1,57 +1,58 @@
 #include<bits/stdc++.h>
 using namespace std;
-
-void selectionsort(int arr[] , int size);
-void inputarray(int arr[],int size);
-void printarray(int arr[],int size);
+void inputarray(int arr[],int s);
+void printarray(int arr[],int s);
+void selectionsort(int arr[],int s);
 int main(void)
 {
-    int n ;
-    cout<<"Enter a nubmer : ";
+    int n;
     cin>>n;
     int arr[n];
     inputarray(arr,n);
-    cout<<"initial Array:\n";
+    cout<<"Array after input"<<endl;
     printarray(arr,n);
-    selectionsort(arr, n);
-    cout<<"\nAfter sorted Array:\n";
+    selectionsort(arr,n);
+    cout<<endl;
+    cout<<"Array after sorting"<<endl;
     printarray(arr,n);
+
     return 0;
 }
-void inputarray(int arr[] ,int size)
+
+void inputarray(int arr[],int s)
 {
-    for (int i = 0;i<size;i++)
+    for(int i =0;i<s;i++)
         cin>>arr[i];
 }
-
-void selectionsort(int arr[] , int size)
+void printarray(int arr[],int s)
 {
-    int temp = 0;
-    for(int i=0;i<size-1;i++)
+    for(int i =0;i<s;i++)
+        cout<<arr[i]<<" ";
+    cout<<endl;
+
+}
+
+void selectionsort(int arr[],int s)
+{
+    int temp;
+    for(int i=0;i<s;i++)
     {
-        int min_index = i;
-        for(int j = i+1;j<size;j++)
+        int min_index=i,counter =0;
+        for(int j=i+1;j<s;j++)
         {
             if(arr[min_index] > arr[j])
-                min_index = j;
+                {
+                    min_index = j;
+                    counter++;
+                }
         }
         temp = arr[min_index];
         arr[min_index] = arr[i];
         arr[i] = temp;
-        /*int key = arr[min_index];
-        while(min_index>i)
+        if(counter == 0)
         {
-            arr[min_index] = arr[min_index-1];
-            min_index--;
+            cout<<i<<endl;
+            break;
         }
-        arr[i] = key;*/
-
-}
-void printarray(int arr[],int size)
-{
-    for (int i=0;i<size;i++)
-    {
-        cout<<arr[i]<<" ";
     }
 }
-
