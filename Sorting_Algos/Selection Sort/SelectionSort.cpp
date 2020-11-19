@@ -27,7 +27,7 @@ void inputarray(int arr[] ,int size)
 void selectionsort(int arr[] , int size)
 {
     int temp = 0;
-    for(int i=0;i<size-1;i++)
+    for(int i=0;i<size;i++)
     {
         int min_index = i;
         for(int j = i+1;j<size;j++)
@@ -46,6 +46,7 @@ void selectionsort(int arr[] , int size)
         }
         arr[i] = key;*/
 
+}
 }
 void printarray(int arr[],int size)
 {

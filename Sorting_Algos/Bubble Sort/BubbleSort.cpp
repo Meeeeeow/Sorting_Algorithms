@@ -40,7 +40,7 @@ void bubblesort(int arr[],int size)
 
         for(int j =0 ;j<size-i;j++)
         {
-            if (arr[j] > arr[j+1])
+            if (arr[j] < arr[j+1])
             {
                 //cout<<arr[j]<<" "<<arr[j+1]<<"\n";
                 temp = arr[j];
